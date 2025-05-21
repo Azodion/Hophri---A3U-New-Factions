@@ -154,3 +154,18 @@
         file = "Aegis_Civ";
         description = $STR_A3AP_setupFactionsTab_vanilla_civ;
     };
+
+    class Bocano_Base: Aegis_Base
+    {
+        requiredAddons[] = {"A3_Aegis_Soft_F_Aegis_Quadbike_01", "A3_Atlas_Soft_F_Atlas_Quadbike_01", "A3_Opf_Soft_F_Opf_Quadbike_01", "A3_Revolucion_Soft_F_Revolucion_Quadbike_01"};
+        priority = 61;
+    };
+
+    class Leg_Bocano: Bocano_Base
+    {
+        side = "Inv";
+        flagTexture = "\A3_Aegis\UI_F_Aegis\Data\CfgMarkers\Bocano_CA.paa";
+        name = "Bocano 2035";
+        file = "Aegis_AI_Bocano";
+        description = "Bocano Defense Forces (BDF).\nLightly equipped but well-trained, they prioritize mobility and local terrain knowledge over firepower.";
+    };
