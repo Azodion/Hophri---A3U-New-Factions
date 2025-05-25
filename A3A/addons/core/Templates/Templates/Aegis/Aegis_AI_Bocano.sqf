@@ -143,6 +143,7 @@ if (_hasWs) then {
 
 ["voices", ["Male01GRE", "Male05GRE", "Male06GRE"]] call _fnc_saveToTemplate;
 ["faces", ["AfricanHead_02", "AfricanHead_03", "AfricanHead_01"]] call _fnc_saveToTemplate;
+
 "AfroMen" call _fnc_saveNames;
 
 //////////////////////////
@@ -433,30 +434,52 @@ _militaryLoadoutData set ["backpacks", ["B_AssaultPackSpec_rgr", "B_FieldPack_ol
 _militaryLoadoutData set ["helmets", ["H_PASGT_basic_green_F", "H_pasgt_basic_camo_F", "lxWS_H_PASGT_goggles_green_F", "H_PASGT_basic_sand_F", "H_PASGT_goggles_sand_F"]];
 
 _militaryLoadoutData set ["slRifles", [
-    ["arifle_SLR_lxWS", "", "", "optic_LRPS", ["7Rnd_408_Mag"], [], ""]
+    ["Aegis_arifle_AKS74_F", "", "Aegis_acc_LightModule_Pistol_black", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["Aegis_arifle_AKS74_oak_F", "", "Aegis_acc_LightModule_Pistol_black", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+
+    ["arifle_AKSM_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["arifle_AKSM_alt_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["arifle_AKS_alt_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+
+    ["Aegis_arifle_AKM74_GL_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""]
 ]];
-_militaryLoadoutData set ["rifles", []];
-_militaryLoadoutData set ["carbines", []];
-_militaryLoadoutData set ["grenadeLaunchers", []];
-_militaryLoadoutData set ["SMGs", []];
+_militaryLoadoutData set ["rifles", [
+    ["Aegis_arifle_AKS74_F", "", "Aegis_acc_LightModule_Pistol_black", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["Aegis_arifle_AKS74_oak_F", "", "Aegis_acc_LightModule_Pistol_black", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""]
+]];
+_militaryLoadoutData set ["carbines", [
+    ["arifle_AKSM_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["arifle_AKSM_alt_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["arifle_AKS_alt_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""]
+]];
+_militaryLoadoutData set ["grenadeLaunchers", [
+    ["Aegis_arifle_AKM74_GL_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], ["1Rnd_Smoke_Grenade_shell"], ""]
+]];
+_militaryLoadoutData set ["SMGs", [
+    ["arifle_AKSM_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["arifle_AKSM_alt_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""],
+    ["arifle_AKS_alt_F", "", "", "", ["30Rnd_545x39_Mag_Tracer_Green_F"], [], ""]
+]];
 
-_militaryLoadoutData set ["machineGuns", []];
+_militaryLoadoutData set ["machineGuns", [
+    ["arifle_RPK_F", "", "", "", ["75Rnd_762x39_Mag_Green_F"], [], ""]
+]];
 
-_militaryLoadoutData set ["marksmanRifles", []];
-_militaryLoadoutData set ["sniperRifles", []];
+_militaryLoadoutData set ["marksmanRifles", [
+    ["Aegis_srifle_SVD_f", "", "", "optic_DMS", ["10Rnd_762x54_Mag"], [], ""]
+]];
+_militaryLoadoutData set ["sniperRifles", [
+    ["srifle_DMR_03_F", "", "", "optic_KHS_blk", ["20Rnd_762x51_Mag"], [], ""]
+]];
 
 
 ///////////////////////////////
 //    Police Loadout Data    //
 ///////////////////////////////
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_policeLoadoutData set ["uniforms", ["U_B_GEN_Soldier_F", "U_B_GEN_Commander_F"]];
-_policeLoadoutData set ["vests", ["V_TacVest_gen_F"]];
-private _helmets = ["H_MilCap_gen_F", "H_Beret_gen_F"];
-if (_hasLawsOfWar) then {
-    _helmets pushBack "H_PASGT_basic_blue_F";
-};
-_policeLoadoutData set ["helmets", _helmets];
+_policeLoadoutData set ["uniforms", ["U_I_Bocano_CombatUniform_jacket", "U_I_Bocano_CombatUniform_shortsleeve"]];
+_policeLoadoutData set ["vests", ["V_TacVest_blk_POLICE"]];
+_policeLoadoutData set ["helmets", ["H_Beret_PRB_01_F"]];
 
 _policeLoadoutData set ["SMGs", [
 ["SMG_01_F", "", "acc_flashlight_smg_01", "optic_Aco", [], [], ""],
