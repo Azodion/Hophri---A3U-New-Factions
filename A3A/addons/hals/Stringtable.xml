@@ -1015,6 +1015,14 @@
                 <French>HAFM</French>
                 <Chinesesimp>HAFM</Chinesesimp>
             </Key>
+            <Key ID="STR_A3AU_mss">
+                <Original>MSS</Original>
+                <English>MSS</English>
+                <Russian>MSS</Russian>
+                <Korean>MSS</Korean>
+                <French>MSS</French>
+                <Chinesesimp>MSS</Chinesesimp>
+            </Key>
             <!-- <Key ID="STR_A3AU_PROJINF">
                 <Original>P.I.</Original>
                 <German>P.I.</German>

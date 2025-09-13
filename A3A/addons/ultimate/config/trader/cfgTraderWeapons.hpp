@@ -178,3 +178,7 @@
         {
             prefix = "ef";
         };
+        class weapons_mss : weapons_base
+        {
+            prefix = "mss_stock";
+        };
