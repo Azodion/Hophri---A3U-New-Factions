@@ -85,6 +85,12 @@ if (_backpack != "") then {
 };
 _unit setUnitLoadout [ [], [], [], [uniform _unit, []], [], [], "", "", [], ["","","","","",""] ];
 
+// Explicit weapon removal to handle mod interference (e.g., Lifeline Revive)
+removeAllWeapons _unit;
+removeAllAssignedItems _unit;
+removeAllItems _unit;
+removeAllContainers _unit;
+
 //find and properly dispose dropped weapons
 {
 	_boxX addWeaponWithAttachmentsCargoGlobal [(weaponsItemsCargo _x) select 0, 1];
@@ -107,6 +113,24 @@ if (!isNil "_markerX") then { [_markerX, _unitSide] remoteExec ["A3A_fnc_zoneChe
 
 sleep 3;				// Also protects against box kills
 _unit allowDamage true;
+
+// Safeguard: Check and remove any weapons that mysteriously reappear (mod interference)
+private _weaponCheckLoop = [_unit] spawn {
+	params ["_unit"];
+	private _safetyIterations = 0;
+	while {_safetyIterations < 10 && alive _unit && (_unit getVariable ["surrendered", false])} do {
+		if (count (weapons _unit) > 0 || count (magazines _unit) > 0 || count (items _unit) > 0) then {
+			removeAllWeapons _unit;
+			removeAllAssignedItems _unit;
+			removeAllItems _unit;
+			removeAllContainers _unit;
+		};
+		_safetyIterations = _safetyIterations + 1;
+		sleep 0.5;
+	};
+};
+_unit setVariable ["A3U_PoW_WeaponCheckPID", _weaponCheckLoop, true];
+
 private _handlerDamage = _unit addEventHandler ["HandleDamage", {
 	// If unit gets injured after the delay, run away
 	params ["_unit","_part","_damage"];
