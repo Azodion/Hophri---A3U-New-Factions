@@ -6444,6 +6444,9 @@
                 <Chinesesimp>启用自我复苏</Chinesesimp>
                 <Turkish>Kendi kendini canlandırma yöntemleri etkinleştirildi</Turkish>
             </Key>
+            <Key ID="STR_A3A_Params_medicalSystem_title">
+                <Original>ANTISTASI MEDICAL SYSTEM</Original>
+            </Key>
             <Key ID="STR_A3A_Params_selfReviveMethods_desc">
                 <Original>No: Players cannot self-revive. Withstand: Players can self-revive if they have a first aid kit.</Original>
                 <Russian>Нет: Игроки не могут возрождаться самостоятельно. Выдержка: Игроки могут возрождаться самостоятельно, если у них есть аптечка.</Russian>

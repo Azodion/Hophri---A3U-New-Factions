@@ -121,7 +121,7 @@ switch (_mode) do
         private _filterExpression = if (_filter isEqualType 0) then {{
             private _shownTypes = (createHashMapFromArray[
                 [0, ["Basic", "Scenario", "Member", "Script", "Timer"]],
-                [1, ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"]],
+                [1, ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance", "Medical"]],
                 [2, ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"]],
                 [3, ["Builder"]],
                 [4, ["Experimental", "Development"]],

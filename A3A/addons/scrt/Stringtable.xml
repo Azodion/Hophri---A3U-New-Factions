@@ -7438,6 +7438,22 @@
                 <Korean>무한 사용 소생 키트는 장착된 경우 플레이어가 쓰러질 때 자동으로 플레이어를 소생시킵니다.</Korean>
                 <French>Les kits de réanimation à usage illimité qui réaniment automatiquement les joueurs lorsqu'ils sont mis à terre s'ils sont équipés.</French>
             </Key>
+            <Key ID="STR_params_aiMedicalSystem">
+                <Original>Enable Antistasi medical system</Original>
+                <Russian>Включить медицинскую систему Antistasi</Russian>
+                <Chinesesimp>启用 Antistasi 医疗系统</Chinesesimp>
+                <Korean>Antistasi 의료 시스템 활성화</Korean>
+                <French>Activer le système médical d'Antistasi</French>
+                <Turkish>Antistasi tıbbi sistemini etkinleştir</Turkish>
+            </Key>
+            <Key ID="STR_params_aiMedicalSystem_desc">
+                <Original>Enables Antistasi's built-in unconscious and revive mechanics. Disable if using a third-party medical mod.</Original>
+                <Russian>Включает встроенные механики потери сознания и возрождения Antistasi. Отключите, если используете сторонний медицинский мод.</Russian>
+                <Chinesesimp>启用 Antistasi 的内置昏迷和复活机制。如果使用第三方医疗模组，请禁用。</Chinesesimp>
+                <Korean>Antistasi의 내장된 무의식 및 소생 메커니즘을 활성화합니다. 타사 의료 모드를 사용하는 경우 비활성화하십시오.</Korean>
+                <French>Active les mécanismes intégrés d'inconscience et de réanimation d'Antistasi. Désactivez si vous utilisez un mod médical tiers.</French>
+                <Turkish>Antistasi'nin yerleşik bilinç kaybı ve yeniden canlandırma mekaniklerini etkinleştirir. Üçüncü taraf tıbbi mod kullanıyorsanız devre dışı bırakın.</Turkish>
+            </Key>
             <Key ID="STR_params_lootCrateHeli">
                 <Original>Enable loot gather crates and loot helicopter commander ability</Original>
                 <Russian>Включить ящики-сборщики добычи и вызов вертолёта-сборщика добычи</Russian>

@@ -822,6 +822,215 @@ class Params
         lockInGame = 1;
     };
 
+    class MedicalParamsSpacer : AIParamsSpacer
+    {
+        type = "Medical";
+    };
+    class MedicalParams : AIParams
+    {
+        type = "Medical";
+        title = $STR_A3A_Params_medicalSystem_title;
+        values[] = {};
+        texts[] = {};
+        default = 0;
+    };
+    class aiMedicalSystem: MedicalParams
+    {
+        title = $STR_params_aiMedicalSystem;
+        tooltip = $STR_params_aiMedicalSystem_desc;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        class dependencies
+        {
+            class reviveKitsEnabled
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency;
+            };
+            class A3A_reviveTime
+            {
+                value = 0;
+                lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency;
+            };
+            class A3A_selfReviveMethods
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency;
+            };
+            class useDownedNotification
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency;
+            };
+            class unconChanceEny
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency;
+            };
+            class unconChanceReb
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency;
+            };
+        };
+        default = 1;
+    };
+    class reviveKitsEnabled: MedicalParams
+    {
+        title = $STR_params_reviveKitsEnabled;
+        tooltip = $STR_params_reviveKitsEnabled_desc;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : solo {};
+        };
+        default = 1;
+    };
+    class A3A_reviveTime: MedicalParams
+    {
+        title = $STR_params_revive_time;
+        tooltip = $STR_params_revive_time_desc;
+        values[] = {8,12,16,24,32};
+        texts[] = {"8","12","16","24","32"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 8;
+                medium = 16;
+                hard = 32;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 16;
+    };
+    class A3A_selfReviveMethods: MedicalParams
+    {
+        title = $STR_A3A_Params_selfReviveMethods_title;
+        tooltip = $STR_A3A_Params_selfReviveMethods_desc;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_A3A_Params_selfReviveMethods_withstand};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class large : solo {};
+        };
+        default = 0;
+    };
+    class useDownedNotification: MedicalParams
+    {
+        title = $STR_A3AU_use_downed_notification;
+        tooltip = $STR_A3AU_use_downed_notification_desc;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+    };
+    class unconChanceEny : MedicalParams
+    {
+        title = $STR_params_unconChanceEny;
+        tooltip = $STR_params_unconChanceEny_desc;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 8;
+                hard = 6;
+            };
+            class small
+            {
+                easy = 8;
+                medium = 6;
+                hard = 4;
+            };
+            class medium
+            {
+                easy = 6;
+                medium = 4;
+                hard = 2;
+            };
+            class large
+            {
+                easy = 4;
+                medium = 2;
+                hard = 0;
+            };
+        };
+        default = 10;
+        lockCondition = "A3A_hasACEMedical;";
+        lockConditionTooltip = $STR_params_unconChance_lockCondition;
+    };
+    class unconChanceReb : unconChanceEny
+    {
+        title = $STR_params_unconChanceReb;
+        tooltip = $STR_params_unconChanceReb_desc;
+    };
+
     class BalanceParamsSpacer : AIParamsSpacer
     {
         type = "Balance";
@@ -1099,96 +1308,6 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
         //lockCondition = "!('enoch' in flatten (['getContent'] call A3A_fnc_setupFactionsTab));"; // TODO: this works, but checking the box in the content tab doesn't force a re-evaluation of the lock condition, so it's not much help.
-    };
-    class reviveKitsEnabled: RebelBalanceParams
-    {
-        title = $STR_params_reviveKitsEnabled;
-        tooltip = $STR_params_reviveKitsEnabled_desc;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 1;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium
-            {
-                easy = 1;
-                medium = 0;
-                hard = 0;
-            };
-            class large : solo {};
-        };
-        default = 1;
-    };
-    class A3A_reviveTime: RebelBalanceParams
-    {
-        title = $STR_params_revive_time;
-        tooltip = $STR_params_revive_time_desc;
-        values[] = {8,12,16,24,32};
-        texts[] = {"8","12","16","24","32"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 8;
-                medium = 16;
-                hard = 32;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 16;
-    };
-    class A3A_selfReviveMethods: RebelBalanceParams
-    {
-        title = $STR_A3A_Params_selfReviveMethods_title;
-        tooltip = $STR_A3A_Params_selfReviveMethods_desc;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_A3A_Params_selfReviveMethods_withstand};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 1;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium
-            {
-                easy = 1;
-                medium = 0;
-                hard = 0;
-            };
-            class large : solo {};
-        };
-        default = 0;
-    };
-    class useDownedNotification: RebelBalanceParams
-    {
-        title = $STR_A3AU_use_downed_notification;
-        tooltip = $STR_A3AU_use_downed_notification_desc;
-        values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 0;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
     };
     class rallyPointSpawnCount: RebelBalanceParams
     {
@@ -1701,48 +1820,6 @@ class Params
             class large : solo {};
         };
         default = 45;
-    };
-    class unconChanceEny : AIBalanceParams
-    {
-        title = $STR_params_unconChanceEny;
-        tooltip = $STR_params_unconChanceEny_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 10;
-                medium = 8;
-                hard = 6;
-            };
-            class small
-            {
-                easy = 8;
-                medium = 6;
-                hard = 4;
-            };
-            class medium
-            {
-                easy = 6;
-                medium = 4;
-                hard = 2;
-            };
-            class large
-            {
-                easy = 4;
-                medium = 2;
-                hard = 0;
-            };
-        };
-        default = 10;
-        lockCondition = "A3A_hasACEMedical;";
-        lockConditionTooltip = $STR_params_unconChance_lockCondition;
-    };
-    class unconChanceReb : unconChanceEny
-    {
-        title = $STR_params_unconChanceReb;
-        tooltip = $STR_params_unconChanceReb_desc;
     };
     class napalmEnabled: AIBalanceParams
     {
