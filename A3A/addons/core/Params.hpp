@@ -893,6 +893,46 @@ class Params
         default = 1000;
         lockOnSave = 1;
     };
+    class moneyMultiplier: RebelBalanceParams
+    {
+        title = $STR_params_moneyMultiplier;
+        tooltip = $STR_params_moneyMultiplier_desc;
+        values[] = {25,50,75,100,150,200,300};
+        texts[] = {"0.25x","0.5x","0.75x","1x","1.5x","2x","3x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 200;
+                medium = 100;
+                hard = 50;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 100;
+    };
+    class hrMultiplier: RebelBalanceParams
+    {
+        title = $STR_params_hrMultiplier;
+        tooltip = $STR_params_hrMultiplier_desc;
+        values[] = {25,50,75,100,150,200,300};
+        texts[] = {"0.25x","0.5x","0.75x","1x","1.5x","2x","3x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 200;
+                medium = 100;
+                hard = 50;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 100;
+    };
     class deathPenalty: RebelBalanceParams
     {
         title = $STR_params_deathPenalty;
@@ -1364,6 +1404,26 @@ class Params
             class large : medium {};
         };
         default = 0;
+    };
+    class fastTravelTimeMultiplier: RebelBalanceParams
+    {
+        title = $STR_params_fastTravelTimeMultiplier;
+        tooltip = $STR_params_fastTravelTimeMultiplier_desc;
+        values[] = {1,25,50,75,100,150,200,300};
+        texts[] = {"1 Sec","0.25x","0.5x","0.75x","1x","1.5x","2x","3x"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 50;
+                medium = 100;
+                hard = 200;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 100;
     };
     class unflipPersonCount: RebelBalanceParams
     {

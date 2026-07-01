@@ -30,7 +30,10 @@ private _filename = "fn_customHintRender.sqf";
 if (!hasInterface || !A3A_customHintEnable) exitWith {false;}; // Disabled for server & HC.
 
 if (A3A_customHint_MSGs isEqualTo []) then {
-    hintSilent "";
+    if (A3A_customHint_DisplayActive) then {
+        hintSilent "";
+        A3A_customHint_DisplayActive = false;
+    };
 } else{
     private _autoDismiss = 15;  // Number of seconds for message lifetime  // Constant Value
     if (serverTime - A3A_customHint_UpdateTime > _autoDismiss) exitWith {
@@ -64,6 +67,7 @@ if (A3A_customHint_MSGs isEqualTo []) then {
         hint _structuredText;
         A3A_customHint_MSGs#(_topMSGIndex) set [2,true]; // so it does not ping more than once.
     };
+    A3A_customHint_DisplayActive = true;
 };
 true;
 

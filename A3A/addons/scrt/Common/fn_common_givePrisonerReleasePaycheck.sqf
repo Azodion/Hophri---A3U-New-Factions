@@ -37,6 +37,12 @@ if(_releasePaycheck > 0) then {
     [_playerX,_releasePaycheck] spawn {
         params ["_playerX", "_releasePaycheck"];
 
+        private _moneyMultiplier = missionNamespace getVariable ["moneyMultiplier", 100];
+        if ((_moneyMultiplier != 100) && (_releasePaycheck > 0)) then {
+            _releasePaycheck = round(_releasePaycheck * _moneyMultiplier / 100);
+            if ((_releasePaycheck == 0) && (_moneyMultiplier > 0)) then {_releasePaycheck = 1};
+        };
+
         _timeOut = time + 120;
         waitUntil { time > _timeOut; };
 

@@ -142,6 +142,13 @@ if ([getMarkerPos _base] call A3A_fnc_enemyNearCheck) exitWith {
 if (_positionTel distance getMarkerPos _base < 500) then {
 	private _positionX = [getMarkerPos _base, 10, random 360] call BIS_Fnc_relPos;
 	private _distanceX = round (((position _boss) distance _positionX)/200);
+	private _fastTravelTimeMultiplier = missionNamespace getVariable ["fastTravelTimeMultiplier", 100];
+	if (_fastTravelTimeMultiplier == 1) then {
+		_distanceX = 1;
+	} else {
+		_distanceX = round (_distanceX * _fastTravelTimeMultiplier / 100);
+		if (_distanceX < 1) then {_distanceX = 1};
+	};
 	private _forcedX = false;
 	
 	if (!_esHC) then {

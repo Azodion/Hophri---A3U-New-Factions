@@ -6262,6 +6262,22 @@
                 <French>Vérification de l'escouade des joueurs (Vanilla Antistasi Style)</French>
                 <Turkish>Oyuncu mangasını kontrol et (Vanilla Antistasi Stili)</Turkish>
             </Key>
+            <Key ID="STR_params_fastTravelTimeMultiplier">
+                <Original>Fast Travel Timer Multiplier</Original>
+                <Russian>Множитель времени быстрого перемещения</Russian>
+                <Chinesesimp>快速旅行计时器倍数</Chinesesimp>
+                <Korean>빠른 이동 타이머 배율</Korean>
+                <French>Multiplicateur de temps de voyage rapide</French>
+                <Turkish>Hızlı Seyahat Zamanlayıcı Çarpanı</Turkish>
+            </Key>
+            <Key ID="STR_params_fastTravelTimeMultiplier_desc">
+                <Original>Scales how long fast travel waits before moving the player or HC group. Set to 1 sec for near-instant fast travel.</Original>
+                <Russian>Масштабирует длительность ожидания быстрого перемещения перед перемещением игрока или группы УК. Установите 1 сек для почти мгновенного перемещения.</Russian>
+                <Chinesesimp>缩放快速旅行在移动玩家或指挥组之前的等待时间。设置为1秒以实现几乎即时的快速旅行。</Chinesesimp>
+                <Korean>플레이어 또는 HC 그룹이 이동하기 전에 빠른 이동 대기 시간을 조정합니다. 거의 즉시 이동하려면 1초로 설정하세요.</Korean>
+                <French>Met à l'échelle la durée d'attente du voyage rapide avant de déplacer le joueur ou le groupe HC. Choisissez 1 sec pour un voyage quasi instantané.</French>
+                <Turkish>Oyuncunun veya HC grubunun taşınmasından önce fast travel bekleme süresini ölçeklendirir. Yaklaşık anlık fast travel için 1 sn seçin.</Turkish>
+            </Key>
             <Key ID="STR_params_playerStartingMoney">
                 <Original>Initial Player Money</Original>
                 <Russian>Начальные деньги игрока</Russian>
@@ -6291,6 +6307,38 @@
                 <Chinesesimp>设置抵抗军派系的初始金钱；影响早期建设和支援选项。</Chinesesimp>
                 <Korean>반란군 팩션의 초기 자금을 설정합니다. 조기 건설 및 지원 옵션에 영향을 미칩니다.</Korean>
                 <French>Définit la somme d'argent initiale de la faction rebelle ; influence les options de construction et de soutien au début.</French>
+            </Key>
+            <Key ID="STR_params_moneyMultiplier">
+                <Original>Money Multiplier</Original>
+                <Russian>Множитель денег</Russian>
+                <Chinesesimp>金钱倍数</Chinesesimp>
+                <Korean>돈 배율</Korean>
+                <French>Multiplicateur d'argent</French>
+                <Turkish>Para Çarpanı</Turkish>
+            </Key>
+            <Key ID="STR_params_moneyMultiplier_desc">
+                <Original>Scales money income and rewards earned by the rebel faction and from player money gains.</Original>
+                <Russian>Масштабирует доходы и награды в деньгах, получаемые фракцией повстанцев и игроком.</Russian>
+                <Chinesesimp>缩放反叛军阵营及玩家获得的金钱收入和奖励。</Chinesesimp>
+                <Korean>반란군 파벌과 플레이어가 얻는 금전 수입 및 보상을 조정합니다.</Korean>
+                <French>Met à l'échelle les revenus et récompenses en argent générés par la faction rebelle et le joueur.</French>
+                <Turkish>Direnişçi fraksiyon ve oyuncunun elde ettiği para gelirlerini ölçeklendirir.</Turkish>
+            </Key>
+            <Key ID="STR_params_hrMultiplier">
+                <Original>HR Multiplier</Original>
+                <Russian>Множитель людских ресурсов</Russian>
+                <Chinesesimp>人力倍数</Chinesesimp>
+                <Korean>인력 배율</Korean>
+                <French>Multiplicateur de RH</French>
+                <Turkish>İK Çarpanı</Turkish>
+            </Key>
+            <Key ID="STR_params_hrMultiplier_desc">
+                <Original>Scales human resource (HR) gains for the rebel faction during the campaign.</Original>
+                <Russian>Масштабирует прирост людских ресурсов (HR) для фракции повстанцев в кампании.</Russian>
+                <Chinesesimp>在战役期间缩放反叛军阵营的人力资源（HR）增益。</Chinesesimp>
+                <Korean>캠페인 중 반란군 파벌의 인력(RH) 획득량을 조정합니다.</Korean>
+                <French>Met à l'échelle les gains de ressources humaines (RH) pour la faction rebelle pendant la campagne.</French>
+                <Turkish>Kampanya boyunca direnişçi fraksiyon için insan kaynağı (İK) kazanımlarını ölçeklendirir.</Turkish>
             </Key>
             <Key ID="STR_params_initialHr">
                 <Original>Initial Rebel Faction Manpower</Original>

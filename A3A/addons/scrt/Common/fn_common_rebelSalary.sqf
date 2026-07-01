@@ -40,6 +40,11 @@ _nul = [_totalSalary, _rebelsCount, _rebels] spawn {
 	params ["_totalSalary", "_rebelsCount", "_rebels"];
 	private _incomePerPlayer = round(_totalSalary / _rebelsCount);
 	if (!finite _incomePerPlayer) then { _incomePerPlayer = 300; };
+	private _moneyMultiplier = missionNamespace getVariable ["moneyMultiplier", 100];
+	if ((_incomePerPlayer > 0) && (_moneyMultiplier != 100)) then {
+		_incomePerPlayer = round(_incomePerPlayer * _moneyMultiplier / 100);
+		if ((_incomePerPlayer == 0) && (_moneyMultiplier > 0)) then {_incomePerPlayer = 1};
+	};
 	
 	{
 		private _playerMoney = round (((_x getVariable ["moneyX", 0]) + _incomePerPlayer) max 0);

@@ -12,6 +12,17 @@ if ((floor _resourcesFIA == 0) and (floor _hr == 0)) exitWith {resourcesIsChangi
 private _hrT = server getVariable "hr";
 private _resourcesFIAT = server getVariable "resourcesFIA";
 private _hrLimit = nil;
+private _moneyMultiplier = missionNamespace getVariable ["moneyMultiplier", 100];
+private _hrMultiplier = missionNamespace getVariable ["hrMultiplier", 100];
+
+if ((_hr > 0) && (_hrMultiplier != 100)) then {
+    _hr = round (_hr * _hrMultiplier / 100);
+    if ((_hr == 0) && (_hrMultiplier > 0)) then {_hr = 1};
+};
+if ((_resourcesFIA > 0) && (_moneyMultiplier != 100)) then {
+    _resourcesFIA = round (_resourcesFIA * _moneyMultiplier / 100);
+    if ((_resourcesFIA == 0) && (_moneyMultiplier > 0)) then {_resourcesFIA = 1};
+};
 
 _hrT = _hrT + _hr;
 _resourcesFIAT = round (_resourcesFIAT + _resourcesFIA);

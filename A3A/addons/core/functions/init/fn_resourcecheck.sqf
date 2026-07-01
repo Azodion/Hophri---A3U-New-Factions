@@ -137,10 +137,25 @@ while {true} do {
     	_resAdd = 25000;
 	};
 
+	private _moneyMultiplier = missionNamespace getVariable ["moneyMultiplier", 100];
+	private _hrMultiplier = missionNamespace getVariable ["hrMultiplier", 100];
+	private _hrRaw = _hrAdd;
+	private _resRaw = _resAdd;
+	if ((_hrAdd > 0) && (_hrMultiplier != 100)) then {
+		_hrAdd = _hrAdd * _hrMultiplier / 100;
+	};
+	if ((_resAdd > 0) && (_moneyMultiplier != 100)) then {
+		_resAdd = _resAdd * _moneyMultiplier / 100;
+	};
+
 	_hrAdd = round _hrAdd;
 	_resAdd = round _resAdd;
+	if ((_hrAdd == 0) && (_hrRaw > 0) && (_hrMultiplier > 0)) then {_hrAdd = 1};
+	if ((_resAdd == 0) && (_resRaw > 0) && (_moneyMultiplier > 0)) then {_resAdd = 1};
+
 	if (!finite _resAdd) then { _resAdd = 25000; }; //either number is too large or something is broken
 	if (!finite _hrAdd) then { _hrAdd = 30; };
+
 	server setVariable ["hr", _hrAdd + (server getVariable ["hr", 0]), true];
 	server setVariable ["resourcesFIA", _resAdd + (server getVariable ["resourcesFIA", 0]), true];
 
