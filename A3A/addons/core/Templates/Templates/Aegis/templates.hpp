@@ -163,3 +163,12 @@
         name = "Aegis CDF";
         file = "Aegis_AI_CDF_2035";
     };
+
+    class Aegis_CAF_2035 : Aegis_Base
+    {
+        requiredAddons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02", "PUP_CAF_JAM", "Weapons_F_JCA_IA", "Uniforms_F_JCA_IE"};
+        side = "Occ";
+        flagTexture = "\CA_Flags\Flags\Flag_CAF_CO.paa";
+        name = "Aegis CAF";
+        file = "Aegis_AI_CAF";
+    };
